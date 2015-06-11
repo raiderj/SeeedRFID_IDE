@@ -13,12 +13,12 @@
 // #define DEBUG
 #define TEST
 
-SeeedRFID RFID(RFID_RX_PIN, RFID_TX_PIN);
-RFIDdata tag;
-
 void setup() {
 	Serial.begin(57600);
 	Serial.println("Hello, double bk!");
+	
+	SeeedRFID RFID(RFID_RX_PIN, RFID_TX_PIN); // Moved into setup from constructor, hard faults Spark Core
+	RFIDdata tag;
 }
 
 void loop() { 
